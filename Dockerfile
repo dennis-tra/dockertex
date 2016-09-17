@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Dennis Trautwein
+MAINTAINER Dennis Trautwein <grafwurstula@posteo.net>
 
 RUN apt-get update && apt-get install --yes vim texlive-full
 
