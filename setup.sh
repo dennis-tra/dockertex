@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #
 # a simple way to parse shell script arguments
@@ -14,15 +14,15 @@ function usage() {
     echo "from my public repo (dentra/dockertex) on DockerHub."
     echo ""
     echo "Possible arguments:"
-    echo "\t-h --help\tDisplays this message"
-    echo "\t-b --build\tUses the Dockerfile to build the dockertex image. This process could take up to an hour."
-    echo "\t-p --pull\tPulls the image from Docker hub (dentra/dockertex) (> 4GB)"
+    echo -e "\t-h --help\tDisplays this message"
+    echo -e "\t-b --build\tUses the Dockerfile to build the dockertex image. This process could take up to an hour."
+    echo -e "\t-p --pull\tPulls the image from Docker hub (dentra/dockertex) (> 4GB)"
     echo ""
 }
 
 function displayUsageMessage() {
   echo "Dockertex - Info: To run LaTex commands from inside the container just prepend your commands with 'dockertex'. E.g."
-  echo "\t$ dockertex pdflatex example.tex"
+  echo -e "\t$ dockertex pdflatex example.tex"
 }
 
 function copyExecutable() {
@@ -63,8 +63,6 @@ while [ true ]; do
             exit
             ;;
         *)
-            echo "Dockertex - ERROR: unknown parameter \"$PARAM\""
-            echo ""
             usage
             exit 1
             ;;
